@@ -223,43 +223,11 @@ function Hero() {
               <div className="relative w-[280px] h-[560px] rounded-[3rem] bg-slate-900 p-3 soft-shadow shadow-2xl">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-slate-900 rounded-b-2xl z-10" />
                 <div className="w-full h-full rounded-[2.4rem] overflow-hidden bg-white relative">
-                  <div className="px-5 pt-10 pb-3 flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-900">
-                      Vitrine Maria
-                    </span>
-                    <span className="text-[10px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
-                      Online
-                    </span>
-                  </div>
-                  <div className="px-4 grid grid-cols-2 gap-2.5">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div
-                        key={i}
-                        className="aspect-[3/4] rounded-xl bg-slate-100 overflow-hidden relative"
-                      >
-                        <img
-                          src={`https://images.pexels.com/photos/${
-                            [994523, 1488463, 1536619, 2466756][i - 1]
-                          }/pexels-photo-${
-                            [994523, 1488463, 1536619, 2466756][i - 1]
-                          }.jpeg?auto=compress&cs=tinysrgb&w=300`}
-                          alt=""
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute bottom-1.5 left-1.5 right-1.5 bg-white/90 backdrop-blur-sm rounded-md px-1.5 py-1">
-                          <p className="text-[9px] font-bold text-slate-900">
-                            R$ {[89, 129, 149, 79][i - 1]},90
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4 bg-emerald-500 rounded-xl py-3 flex items-center justify-center gap-2 shadow-lg">
-                    <MessageCircle className="w-4 h-4 text-white" />
-                    <span className="text-xs font-bold text-white">
-                      Comprar pelo WhatsApp
-                    </span>
-                  </div>
+                  <img
+                    src="/image.png"
+                    alt="Vitrine King Store"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -1056,3 +1024,6 @@ export default function LandingPage() {
     </div>
   );
 }
+
+
+export default LandingPage
