@@ -401,8 +401,8 @@ function FeaturesBento() {
 
           <FeatureCard
             className="md:col-span-3"
-            hoverBorder="hover:border-amber-200"
-            blurColor="rgba(245,158,11,0.18)"
+            hoverBorder="hover:border-slate-300"
+            blurColor="rgba(15,23,42,0.12)"
             icon={
               <span className="inline-flex w-12 h-12 rounded-2xl bg-slate-100 items-center justify-center">
                 <Tags className="w-6 h-6 text-slate-700" />
@@ -434,11 +434,11 @@ function FeaturesBento() {
 
           <FeatureCard
             className="md:col-span-3"
-            hoverBorder="hover:border-emerald-200"
-            blurColor="rgba(16,185,129,0.18)"
+            hoverBorder="hover:border-slate-300"
+            blurColor="rgba(15,23,42,0.18)"
             icon={
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-emerald-50 items-center justify-center">
-                <Share2 className="w-6 h-6 text-emerald-600" />
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-slate-900 items-center justify-center shadow-[0_8px_20px_-8px_rgba(15,23,42,0.5)]">
+                <Share2 className="w-6 h-6 text-white" />
               </span>
             }
             title="Indique e Ganhe Comissão"
@@ -459,11 +459,11 @@ function FeaturesBento() {
 
           <FeatureCard
             className="md:col-span-2"
-            hoverBorder="hover:border-emerald-200"
-            blurColor="rgba(16,185,129,0.16)"
+            hoverBorder="hover:border-slate-300"
+            blurColor="rgba(15,23,42,0.12)"
             icon={
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-emerald-50 items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-emerald-600" />
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-slate-100 items-center justify-center">
+                <MessageCircle className="w-6 h-6 text-slate-700" />
               </span>
             }
             title="WhatsApp Integrado"
@@ -472,11 +472,11 @@ function FeaturesBento() {
 
           <FeatureCard
             className="md:col-span-2"
-            hoverBorder="hover:border-blue-200"
-            blurColor="rgba(37,99,235,0.16)"
+            hoverBorder="hover:border-slate-300"
+            blurColor="rgba(15,23,42,0.18)"
             icon={
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-blue-50 items-center justify-center">
-                <Smartphone className="w-6 h-6 text-blue-600" />
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-slate-900 items-center justify-center shadow-[0_8px_20px_-8px_rgba(15,23,42,0.5)]">
+                <Smartphone className="w-6 h-6 text-white" />
               </span>
             }
             title="Sistema Responsivo"
@@ -485,11 +485,11 @@ function FeaturesBento() {
 
           <FeatureCard
             className="md:col-span-2"
-            hoverBorder="hover:border-amber-200"
-            blurColor="rgba(245,158,11,0.16)"
+            hoverBorder="hover:border-slate-300"
+            blurColor="rgba(15,23,42,0.12)"
             icon={
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-amber-50 items-center justify-center">
-                <Globe className="w-6 h-6 text-amber-600" />
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-slate-100 items-center justify-center">
+                <Globe className="w-6 h-6 text-slate-700" />
               </span>
             }
             title="Meta Pixel & Google Tag"
