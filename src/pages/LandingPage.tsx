@@ -373,8 +373,7 @@ function FeaturesBento() {
             <span className="text-blue-600">vender mais</span>
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Uma plataforma completa, pensada para criadores e lojistas que vendem todos
-            os dias pelo WhatsApp.
+            Uma plataforma completa, pensada para negócios que presisam apresentar seus produtos de forma profissional.
           </p>
         </div>
 
