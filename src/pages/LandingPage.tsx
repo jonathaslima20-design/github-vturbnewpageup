@@ -14,8 +14,6 @@ import {
   Globe,
   Eye,
   Users,
-  Heart,
-  Clock,
   DollarSign,
   Star,
   Crown,
@@ -297,129 +295,6 @@ function Hero() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-type StatItem = {
-  Icon: typeof Users;
-  target: number;
-  suffix: string;
-  decimals?: number;
-  label: string;
-};
-
-function useCountUp(target: number, start: boolean, duration = 1600) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    let raf = 0;
-    const startTime = performance.now();
-    const tick = (now: number) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(target * eased);
-      if (progress < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [target, start, duration]);
-  return value;
-}
-
-function StatBlock({
-  stat,
-  visible,
-  delay,
-}: {
-  stat: StatItem;
-  visible: boolean;
-  delay: number;
-}) {
-  const value = useCountUp(stat.target, visible);
-  const display = stat.decimals
-    ? value.toFixed(stat.decimals)
-    : Math.floor(value).toString();
-  const Icon = stat.Icon;
-  return (
-    <div
-      className="group relative flex flex-col items-center md:items-start text-center md:text-left transition-all duration-700"
-      style={{
-        transitionDelay: `${delay}ms`,
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(12px)',
-      }}
-    >
-      <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
-        <span className="block h-px w-4 sm:w-8 bg-slate-900/20 transition-all duration-500 group-hover:w-6 sm:group-hover:w-12 group-hover:bg-slate-900/40" />
-        <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400" strokeWidth={2.5} />
-      </div>
-      <p className="flex items-baseline justify-center md:justify-start gap-0.5 whitespace-nowrap tabular-nums tracking-tight transition-transform duration-300 md:group-hover:scale-[1.03] md:origin-left">
-        <span className="text-xl sm:text-3xl md:text-5xl font-black bg-gradient-to-br from-slate-900 to-slate-600 bg-clip-text text-transparent">
-          {display}
-        </span>
-        <span className="text-sm sm:text-lg md:text-3xl font-bold text-slate-400">
-          {stat.suffix}
-        </span>
-      </p>
-      <p className="mt-1.5 sm:mt-2 text-[8.5px] sm:text-[11px] uppercase tracking-[0.1em] sm:tracking-[0.18em] text-slate-500 font-semibold leading-tight w-full break-words">
-        {stat.label}
-      </p>
-    </div>
-  );
-}
-
-function StatsStrip() {
-  const stats: StatItem[] = [
-    { Icon: Users, target: 3.2, suffix: 'k+', decimals: 1, label: 'Usuários ativos' },
-    { Icon: Heart, target: 98, suffix: '%', label: 'Satisfação' },
-    { Icon: Eye, target: 15, suffix: 'M', label: 'Visualizações' },
-    { Icon: Clock, target: 10, suffix: 'min', label: 'Setup médio' },
-  ];
-
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const node = sectionRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.25 }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <section ref={sectionRef} className="relative bg-white py-10 md:py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-b from-white via-slate-50 to-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_30px_-12px_rgba(15,23,42,0.08)]">
-          <div
-            className="absolute inset-0 opacity-[0.04] pointer-events-none"
-            style={{
-              backgroundImage:
-                'radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)',
-              backgroundSize: '18px 18px',
-            }}
-          />
-          <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
-
-          <div className="relative px-2 sm:px-6 py-8 md:py-12 grid grid-cols-4 divide-x divide-slate-200/70">
-            {stats.map((s, i) => (
-              <div key={s.label} className="min-w-0 px-1.5 sm:px-4 md:px-8">
-                <StatBlock stat={s} visible={visible} delay={i * 80} />
-              </div>
-            ))}
           </div>
         </div>
       </div>
@@ -1152,7 +1027,6 @@ export default function LandingPage() {
     <div className="lp-root lp-font bg-white text-slate-900 overflow-x-hidden">
       <Navbar />
       <Hero />
-      <StatsStrip />
       <FeaturesBento />
       <AnalyticsSection />
       <PricingSection />
