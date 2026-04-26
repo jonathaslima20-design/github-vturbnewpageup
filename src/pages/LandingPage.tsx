@@ -538,48 +538,6 @@ function AnalyticsSection() {
               merecem mais investimento. Tudo em um painel limpo e direto ao ponto.
             </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-5">
-              {[
-                {
-                  icon: <Eye className="w-5 h-5 text-blue-600" />,
-                  bg: 'bg-blue-50',
-                  title: 'Visualizações por produto',
-                  desc: 'Saiba quais produtos atraem mais atenção.',
-                },
-                {
-                  icon: <Users className="w-5 h-5 text-emerald-600" />,
-                  bg: 'bg-emerald-50',
-                  title: 'Origem de leads',
-                  desc: 'Identifique seus melhores canais.',
-                },
-                {
-                  icon: <TrendingUp className="w-5 h-5 text-amber-600" />,
-                  bg: 'bg-amber-50',
-                  title: 'Conversão em tempo real',
-                  desc: 'Acompanhe a taxa hora a hora.',
-                },
-                {
-                  icon: <DollarSign className="w-5 h-5 text-rose-600" />,
-                  bg: 'bg-rose-50',
-                  title: 'Ticket médio',
-                  desc: 'Otimize promoções com base no histórico.',
-                },
-              ].map((f) => (
-                <div key={f.title} className="flex gap-3">
-                  <span
-                    className={`shrink-0 w-10 h-10 rounded-xl ${f.bg} flex items-center justify-center`}
-                  >
-                    {f.icon}
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold text-slate-900">{f.title}</p>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                      {f.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="relative">
