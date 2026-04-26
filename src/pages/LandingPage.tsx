@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import BannerClients from '@/components/subscription/BannerClients';
 import {
   Zap,
   ArrowRight,
@@ -666,6 +667,16 @@ function AnalyticsSection() {
   );
 }
 
+function ClientsBannerSection() {
+  return (
+    <section className="bg-white pb-16 pt-4">
+      <div className="mx-auto max-w-6xl px-6">
+        <BannerClients />
+      </div>
+    </section>
+  );
+}
+
 function PricingSection() {
   const features = [
     'Produtos ilimitados',
@@ -987,6 +998,7 @@ export default function LandingPage() {
       <Hero />
       <FeaturesBento />
       <AnalyticsSection />
+      <ClientsBannerSection />
       <PricingSection />
       <FAQSection />
       <FinalCTA />
