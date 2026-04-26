@@ -238,9 +238,7 @@ function Hero() {
             </h1>
 
             <p className="mt-7 text-xl text-slate-600 max-w-2xl leading-relaxed">
-              Transforme seguidores em clientes com uma vitrine digital pronta para o
-              WhatsApp. Catálogo profissional, atacado e varejo, e analytics que mostram
-              o que realmente vende.
+              Crie uma vitrine profissional para mostrar seus produtos e vender direto pelo WhatsApp, sem burocracia ou conhecimento técnico.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
