@@ -202,7 +202,7 @@ function Hero() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              +2.300 lojistas vendendo no WhatsApp
+              +3.200 usuários ativos
             </span>
 
             <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.05]">
