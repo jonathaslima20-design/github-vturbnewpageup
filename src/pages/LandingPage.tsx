@@ -370,7 +370,7 @@ function FeaturesBento() {
           </span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-black tracking-tight text-slate-900 leading-[1.1]">
             Tudo que você precisa para{' '}
-            <span className="text-blue-600">vender mais</span>
+            <span className="text-blue-600">impulsionar suas vendas</span>
           </h2>
           <p className="mt-4 text-lg text-slate-600">
             Uma plataforma completa, pensada para negócios que presisam apresentar seus produtos de forma profissional.
