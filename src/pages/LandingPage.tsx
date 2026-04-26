@@ -346,26 +346,26 @@ function StatBlock({
   const Icon = stat.Icon;
   return (
     <div
-      className="group relative flex flex-col items-center md:items-start text-center md:text-left transition-all duration-700"
+      className="group relative flex flex-col items-start text-left transition-all duration-700"
       style={{
         transitionDelay: `${delay}ms`,
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(12px)',
       }}
     >
-      <div className="flex items-center gap-2 mb-3">
-        <span className="block h-px w-8 bg-slate-900/20 transition-all duration-500 group-hover:w-12 group-hover:bg-slate-900/40" />
-        <Icon className="w-3.5 h-3.5 text-slate-400" strokeWidth={2.5} />
+      <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+        <span className="block h-px w-5 sm:w-8 bg-slate-900/20 transition-all duration-500 group-hover:w-8 sm:group-hover:w-12 group-hover:bg-slate-900/40" />
+        <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-400" strokeWidth={2.5} />
       </div>
       <p className="flex items-baseline gap-0.5 whitespace-nowrap tabular-nums tracking-tight transition-transform duration-300 group-hover:scale-[1.03] origin-left">
-        <span className="text-4xl md:text-5xl font-black bg-gradient-to-br from-slate-900 to-slate-600 bg-clip-text text-transparent">
+        <span className="text-2xl sm:text-3xl md:text-5xl font-black bg-gradient-to-br from-slate-900 to-slate-600 bg-clip-text text-transparent">
           {display}
         </span>
-        <span className="text-2xl md:text-3xl font-bold text-slate-400">
+        <span className="text-base sm:text-lg md:text-3xl font-bold text-slate-400">
           {stat.suffix}
         </span>
       </p>
-      <p className="mt-2 text-[11px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
+      <p className="mt-1.5 sm:mt-2 text-[9px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-slate-500 font-semibold leading-tight">
         {stat.label}
       </p>
     </div>
@@ -415,9 +415,9 @@ function StatsStrip() {
       <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-12 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-y-10 md:divide-x md:divide-slate-200/70">
+      <div className="relative mx-auto max-w-6xl px-3 sm:px-6 py-10 md:py-14 grid grid-cols-4 gap-x-2 sm:gap-x-4 divide-x divide-slate-200/70">
         {stats.map((s, i) => (
-          <div key={s.label} className="md:px-8 first:md:pl-0 last:md:pr-0">
+          <div key={s.label} className="px-2 sm:px-4 md:px-8 first:pl-0 last:pr-0">
             <StatBlock stat={s} visible={visible} delay={i * 80} />
           </div>
         ))}
