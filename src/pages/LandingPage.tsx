@@ -401,7 +401,7 @@ function FeaturesBento() {
               ].map(({ Icon, label }, i) => (
                 <div
                   key={label}
-                  className="group/card relative aspect-square rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white via-white to-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-slate-900/20 hover:shadow-[0_12px_30px_-12px_rgba(15,23,42,0.25)]"
+                  className="group/card relative aspect-[5/6] rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white via-white to-slate-50 overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-slate-900/20 hover:shadow-[0_12px_30px_-12px_rgba(15,23,42,0.25)]"
                   style={{ transitionDelay: `${i * 40}ms` }}
                 >
                   <div
@@ -415,18 +415,18 @@ function FeaturesBento() {
                   <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full bg-slate-900/[0.04] blur-2xl transition-all duration-500 group-hover/card:bg-slate-900/[0.08]" />
                   <div className="absolute top-3 right-3 w-1.5 h-1.5 rounded-full bg-slate-900/30" />
 
-                  <div className="relative h-full w-full flex flex-col items-center justify-between py-4 px-2">
+                  <div className="relative h-full w-full flex flex-col items-center justify-between py-5 px-3">
                     <div className="relative">
                       <div className="absolute inset-0 rounded-2xl bg-slate-900/5 blur-md scale-110" />
-                      <div className="relative inline-flex w-11 h-11 sm:w-12 sm:h-12 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_8px_20px_-8px_rgba(15,23,42,0.6)] transition-transform duration-500 group-hover/card:scale-110 group-hover/card:rotate-3">
-                        <Icon className="w-5 h-5" strokeWidth={2} />
+                      <div className="relative inline-flex w-12 h-12 sm:w-14 sm:h-14 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_8px_20px_-8px_rgba(15,23,42,0.6)] transition-transform duration-500 group-hover/card:scale-110 group-hover/card:rotate-3">
+                        <Icon className="w-6 h-6" strokeWidth={2} />
                       </div>
                     </div>
-                    <div className="flex flex-col items-center gap-1.5 w-full">
-                      <div className="text-[10px] leading-none font-semibold uppercase tracking-[0.14em] text-slate-700 text-center">
+                    <div className="flex flex-col items-center gap-2 w-full">
+                      <div className="text-[11px] leading-none font-semibold uppercase tracking-[0.14em] text-slate-700 text-center">
                         {label}
                       </div>
-                      <div className="inline-flex items-center gap-1 text-[9px] leading-none font-medium text-slate-500">
+                      <div className="inline-flex items-center gap-1.5 text-[10px] leading-none font-medium text-slate-500">
                         <span className="w-3 h-px bg-slate-300" />
                         Ilimitado
                         <span className="w-3 h-px bg-slate-300" />
