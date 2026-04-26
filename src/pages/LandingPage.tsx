@@ -409,7 +409,7 @@ function FeaturesBento() {
               </span>
             }
             title="Atacado e Varejo"
-            description="Defina faixas de preço por quantidade. Quanto mais o cliente compra, mais ele economiza."
+            description="Cadastre produtos no varejo ou atacado, com faixas de preço e cálculo em tempo real."
           >
             <div className="mt-5 flex items-center gap-3">
               {[
