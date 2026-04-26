@@ -443,23 +443,14 @@ function FeaturesBento() {
             title="Indique e Ganhe Comissão"
             description="Compartilhe seu link exclusivo, indique novos lojistas para o VitrineTurbo e receba comissão em dinheiro a cada assinatura confirmada."
           >
-            <div className="mt-5 space-y-3">
+            <div className="mt-5">
               <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5">
-                <Link2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <Link2 className="w-4 h-4 text-slate-600 shrink-0" />
                 <span className="text-xs font-medium text-slate-700 truncate">
-                  vitrineturbo.com/?ref=<span className="text-emerald-700 font-semibold">seunome</span>
+                  vitrineturbo.com/?ref=<span className="text-slate-900 font-semibold">seunome</span>
                 </span>
-                <span className="ml-auto text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">
+                <span className="ml-auto text-[10px] font-bold uppercase tracking-wider text-slate-700 bg-slate-200 px-2 py-0.5 rounded-md">
                   copiar
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 text-white px-3 py-1.5 text-xs font-bold shadow-sm">
-                  <DollarSign className="w-3.5 h-3.5" />
-                  Comissão por assinatura
-                </div>
-                <span className="text-xs font-semibold text-slate-600">
-                  recebida via Pix
                 </span>
               </div>
             </div>
