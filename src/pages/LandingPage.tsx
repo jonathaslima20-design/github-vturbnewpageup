@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Zap,
@@ -14,6 +14,8 @@ import {
   Globe,
   Eye,
   Users,
+  Heart,
+  Clock,
   DollarSign,
   Star,
   Crown,
@@ -302,24 +304,121 @@ function Hero() {
   );
 }
 
-function StatsStrip() {
-  const stats = [
-    { value: '3.2k+', label: 'Usuário ativos' },
-    { value: '98%', label: 'Satisfação' },
-    { value: '15M', label: 'Visualizações' },
-    { value: '10min', label: 'Setup médio' },
-  ];
+type StatItem = {
+  Icon: typeof Users;
+  target: number;
+  suffix: string;
+  decimals?: number;
+  label: string;
+};
+
+function useCountUp(target: number, start: boolean, duration = 1600) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    let raf = 0;
+    const startTime = performance.now();
+    const tick = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(target * eased);
+      if (progress < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, start, duration]);
+  return value;
+}
+
+function StatBlock({
+  stat,
+  visible,
+  delay,
+}: {
+  stat: StatItem;
+  visible: boolean;
+  delay: number;
+}) {
+  const value = useCountUp(stat.target, visible);
+  const display = stat.decimals
+    ? value.toFixed(stat.decimals)
+    : Math.floor(value).toString();
+  const Icon = stat.Icon;
   return (
-    <section className="bg-slate-50 border-y border-slate-100">
-      <div className="mx-auto max-w-6xl px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map((s) => (
-          <div key={s.label} className="text-center md:text-left">
-            <p className="text-4xl font-black text-slate-900 tracking-tight">
-              {s.value}
-            </p>
-            <p className="mt-1 text-xs uppercase tracking-wider text-slate-500 font-medium">
-              {s.label}
-            </p>
+    <div
+      className="group relative flex flex-col items-center md:items-start text-center md:text-left transition-all duration-700"
+      style={{
+        transitionDelay: `${delay}ms`,
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(12px)',
+      }}
+    >
+      <div className="flex items-center gap-2 mb-3">
+        <span className="block h-px w-8 bg-slate-900/20 transition-all duration-500 group-hover:w-12 group-hover:bg-slate-900/40" />
+        <Icon className="w-3.5 h-3.5 text-slate-400" strokeWidth={2.5} />
+      </div>
+      <p className="flex items-baseline gap-0.5 whitespace-nowrap tabular-nums tracking-tight transition-transform duration-300 group-hover:scale-[1.03] origin-left">
+        <span className="text-4xl md:text-5xl font-black bg-gradient-to-br from-slate-900 to-slate-600 bg-clip-text text-transparent">
+          {display}
+        </span>
+        <span className="text-2xl md:text-3xl font-bold text-slate-400">
+          {stat.suffix}
+        </span>
+      </p>
+      <p className="mt-2 text-[11px] uppercase tracking-[0.18em] text-slate-500 font-semibold">
+        {stat.label}
+      </p>
+    </div>
+  );
+}
+
+function StatsStrip() {
+  const stats: StatItem[] = [
+    { Icon: Users, target: 3.2, suffix: 'k+', decimals: 1, label: 'Usuários ativos' },
+    { Icon: Heart, target: 98, suffix: '%', label: 'Satisfação' },
+    { Icon: Eye, target: 15, suffix: 'M', label: 'Visualizações' },
+    { Icon: Clock, target: 10, suffix: 'min', label: 'Setup médio' },
+  ];
+
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden border-y border-slate-200/60 bg-gradient-to-b from-white via-slate-50 to-white"
+    >
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)',
+          backgroundSize: '18px 18px',
+        }}
+      />
+      <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
+
+      <div className="relative mx-auto max-w-6xl px-6 py-12 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-y-10 md:divide-x md:divide-slate-200/70">
+        {stats.map((s, i) => (
+          <div key={s.label} className="md:px-8 first:md:pl-0 last:md:pr-0">
+            <StatBlock stat={s} visible={visible} delay={i * 80} />
           </div>
         ))}
       </div>
