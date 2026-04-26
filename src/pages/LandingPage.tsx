@@ -341,7 +341,7 @@ function FeatureCard({
 
 function FeaturesBento() {
   return (
-    <section id="recursos" className="py-24 bg-white">
+    <section id="recursos" className="pt-24 pb-12 bg-white">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl mb-14">
           <span className="text-xs uppercase tracking-[0.18em] font-semibold text-blue-600">
