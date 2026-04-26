@@ -532,7 +532,7 @@ function AnalyticsSection() {
               Painel administrativo
             </span>
             <h2 className="mt-3 text-4xl sm:text-5xl font-black tracking-tight text-slate-900 leading-[1.1]">
-              Decisões baseadas em dados reais, não em achismo.
+              Decisões baseadas em dados reais.
             </h2>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">
               Tenha um panorama geral de acessos e leads que o seu catálogo recebe em tempo real.
