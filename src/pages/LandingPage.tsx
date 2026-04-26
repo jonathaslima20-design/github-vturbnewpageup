@@ -242,7 +242,7 @@ function Hero() {
             </h1>
 
             <p className="mt-7 text-xl text-slate-600 max-w-2xl leading-relaxed">
-             Transforme seu negócio com uma vitrine profissional: venda sem limites e sem burocracia.
+             Pare de perder vendas por falta de organização. Tenha uma vitrine profissional ilimitada agora.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
