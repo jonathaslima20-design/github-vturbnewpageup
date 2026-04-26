@@ -678,7 +678,7 @@ function ClientsBannerSection() {
 }
 
 function PricingSection() {
-  const features = [
+  const paidFeatures = [
     'Produtos ilimitados',
     'Categorias ilimitadas',
     'Catálogo Digital via Link',
@@ -689,7 +689,29 @@ function PricingSection() {
     'Programa de Indicação ("Indique e Ganhe")',
   ];
 
+  const freeFeatures = [
+    'Até 20 produtos',
+    'Até 5 categorias',
+    'Catálogo Digital via Link',
+    'Painel Administrativo',
+    'Funcionalidade de carrinho de compras',
+  ];
+
   const plans = [
+    {
+      name: 'Free',
+      price: 'R$ 0',
+      period: 'gratuito para sempre',
+      icon: <Lock className="w-6 h-6 text-slate-500" />,
+      iconBg: 'bg-slate-100',
+      cardBg: 'bg-slate-50/60',
+      border: 'border-slate-200',
+      btn: 'bg-slate-900 hover:bg-slate-800 text-white',
+      popular: false,
+      scale: '',
+      features: freeFeatures,
+      ctaLabel: 'Começar Grátis',
+    },
     {
       name: 'Mensal',
       price: 'R$ 57,00',
@@ -701,6 +723,8 @@ function PricingSection() {
       btn: 'bg-slate-900 hover:bg-slate-800 text-white',
       popular: false,
       scale: '',
+      features: paidFeatures,
+      ctaLabel: 'Assinar Agora',
     },
     {
       name: 'Semestral',
@@ -713,6 +737,8 @@ function PricingSection() {
       btn: 'bg-slate-900 hover:bg-slate-800 text-white',
       popular: false,
       scale: '',
+      features: paidFeatures,
+      ctaLabel: 'Assinar Agora',
     },
     {
       name: 'Anual',
@@ -725,6 +751,8 @@ function PricingSection() {
       btn: 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white',
       popular: true,
       scale: 'lg:scale-[1.03]',
+      features: paidFeatures,
+      ctaLabel: 'Assinar Agora',
     },
   ];
 
@@ -743,41 +771,7 @@ function PricingSection() {
           </p>
         </div>
 
-        <div className="mb-6 rounded-3xl border-2 border-slate-200 bg-slate-50/60 p-6 sm:p-7">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center shrink-0">
-                <Lock className="h-5 w-5 text-slate-500" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">Plano Free</h3>
-                <p className="text-sm text-slate-500">Gratuito para sempre</p>
-              </div>
-            </div>
-            <div className="text-left sm:text-right">
-              <p className="text-2xl font-black tracking-tight text-slate-900">R$ 0</p>
-              <span className="inline-flex items-center mt-1 bg-slate-200 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
-                Plano Atual
-              </span>
-            </div>
-          </div>
-          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2.5">
-            {[
-              'Até 20 produtos',
-              'Até 5 categorias',
-              'Catálogo Digital via Link',
-              'Painel Administrativo',
-              'Funcionalidade de carrinho de compras',
-            ].map((f) => (
-              <div key={f} className="flex items-center gap-2 text-sm text-slate-600">
-                <Check className="w-4 h-4 text-slate-400 shrink-0" strokeWidth={3} />
-                <span>{f}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 items-stretch">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {plans.map((p) => (
             <div
               key={p.name}
@@ -805,7 +799,7 @@ function PricingSection() {
               </div>
 
               <ul className="mt-6 space-y-3 flex-1">
-                {features.map((f) => (
+                {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-slate-700">
                     <Check
                       className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"
@@ -820,7 +814,7 @@ function PricingSection() {
                 to="/register"
                 className={`mt-7 inline-flex items-center justify-center gap-2 ${p.btn} font-semibold px-5 py-3.5 rounded-xl transition-all`}
               >
-                Assinar Agora
+                {p.ctaLabel}
                 <ExternalLink className="w-4 h-4" />
               </Link>
             </div>
