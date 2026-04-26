@@ -238,7 +238,7 @@ function Hero() {
                   </defs>
                 </svg>
               </span>
-              , Não Horas.
+              ,
             </h1>
 
             <p className="mt-7 text-xl text-slate-600 max-w-2xl leading-relaxed">
