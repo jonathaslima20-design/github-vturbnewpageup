@@ -303,10 +303,10 @@ function Hero() {
 
 function StatsStrip() {
   const stats = [
-    { value: '2.3k+', label: 'Lojistas ativos' },
+    { value: '3.2k+', label: 'Usuário ativos' },
     { value: '98%', label: 'Satisfação' },
     { value: '15M', label: 'Visualizações' },
-    { value: '5min', label: 'Setup médio' },
+    { value: '10min', label: 'Setup médio' },
   ];
   return (
     <section className="bg-slate-50 border-y border-slate-100">
