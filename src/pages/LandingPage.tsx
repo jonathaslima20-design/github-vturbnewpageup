@@ -535,8 +535,7 @@ function AnalyticsSection() {
               Decisões baseadas em dados reais, não em achismo.
             </h2>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-              Acompanhe o que vende, de onde vêm seus clientes e quais produtos
-              merecem mais investimento. Tudo em um painel limpo e direto ao ponto.
+              Tenha um panorama geral de acessos e leads que o seu catálogo recebe em tempo real.
             </p>
 
           </div>
