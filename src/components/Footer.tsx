@@ -33,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto py-4 bg-muted/30">
       <div className="container mx-auto px-4 flex flex-col items-center space-y-0.5">
-        <Link to="/login" className="mb-0.5">
+        <Link to="/" className="mb-0.5">
           <Logo size="md" showText={false} />
         </Link>
         <div className="flex items-center gap-4 text-sm">
