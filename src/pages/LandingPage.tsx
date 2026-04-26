@@ -794,7 +794,7 @@ function PricingSection() {
 
         <div className="mt-10 flex items-center justify-center gap-2 text-sm text-slate-600">
           <ShieldCheck className="w-5 h-5 text-emerald-600" />
-          Pagamento seguro via Pix, cartão e boleto. Garantia de 7 dias.
+          Pagamento seguro via Pix ou cartão.
         </div>
       </div>
     </section>
