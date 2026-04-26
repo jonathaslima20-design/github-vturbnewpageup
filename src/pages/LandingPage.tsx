@@ -925,10 +925,6 @@ function Footer() {
       links: ['Recursos', 'Analytics', 'Preços', 'FAQ'],
     },
     {
-      title: 'Empresa',
-      links: ['Sobre', 'Blog', 'Carreiras', 'Contato'],
-    },
-    {
       title: 'Suporte',
       links: ['Central de Ajuda', 'Termos', 'Privacidade', 'Status'],
     },
@@ -936,7 +932,7 @@ function Footer() {
   return (
     <footer className="bg-white border-t border-slate-100">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-3 gap-10">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2.5">
               <span className="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center">
