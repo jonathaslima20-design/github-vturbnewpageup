@@ -393,20 +393,6 @@ function FeaturesBento() {
             title="Gestão Completa de Produtos"
             description="Cadastre, organize e atualize seu catálogo em segundos."
           >
-            <div className="mt-5 flex flex-wrap gap-2">
-              {[
-                'Categorias Ilimitadas',
-                'Produtos Ilimitados',
-                'Links Externos',
-              ].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
             <div className="mt-7 grid grid-cols-3 gap-3">
               {[
                 { Icon: Layers, label: 'Categorias' },
