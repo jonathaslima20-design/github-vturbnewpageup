@@ -162,9 +162,9 @@ function PhoneCarousel() {
   const screens = [
     { src: '/image.png', rotate: 'rotate(-8deg)', bob: 'lp-bob-a' },
     { src: '/image copy.png', rotate: 'rotate(0deg)', bob: 'lp-bob-b', scale: 'scale-110', z: 'relative z-10' },
-    { src: '/image.png', rotate: 'rotate(8deg)', bob: 'lp-bob-c' },
-    { src: '/image copy.png', rotate: 'rotate(-6deg)', bob: 'lp-bob-a' },
-    { src: '/image.png', rotate: 'rotate(4deg)', bob: 'lp-bob-b' },
+    { src: '/image copy copy.png', rotate: 'rotate(8deg)', bob: 'lp-bob-c' },
+    { src: '/image.png', rotate: 'rotate(-6deg)', bob: 'lp-bob-a' },
+    { src: '/image copy copy.png', rotate: 'rotate(4deg)', bob: 'lp-bob-b' },
     { src: '/image copy.png', rotate: 'rotate(-4deg)', bob: 'lp-bob-c' },
   ];
   const sequence = [...screens, ...screens];
