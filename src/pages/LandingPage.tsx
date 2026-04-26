@@ -404,8 +404,8 @@ function FeaturesBento() {
             hoverBorder="hover:border-amber-200"
             blurColor="rgba(245,158,11,0.18)"
             icon={
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-amber-50 items-center justify-center">
-                <Tags className="w-6 h-6 text-amber-600" />
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-slate-100 items-center justify-center">
+                <Tags className="w-6 h-6 text-slate-700" />
               </span>
             }
             title="Atacado e Varejo"
