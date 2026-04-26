@@ -883,29 +883,24 @@ function FinalCTA() {
   return (
     <section className="py-24 bg-white">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden bg-slate-900 rounded-[2rem] px-8 sm:px-14 py-16 sm:py-20 text-center">
-          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-blue-500/30 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-emerald-500/30 blur-3xl pointer-events-none" />
-
+        <div className="relative overflow-hidden bg-primary text-primary-foreground rounded-[2rem] px-8 sm:px-14 py-16 sm:py-20 text-center">
           <div className="relative">
-            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 text-white text-xs font-medium px-3.5 py-1.5 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/15 text-primary-foreground text-xs font-medium px-3.5 py-1.5 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-primary-foreground" />
               Comece em menos de 5 minutos
             </span>
 
-            <h2 className="mt-6 text-4xl sm:text-6xl font-black tracking-tight leading-[1.05]">
-              <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-                Pronto para acelerar suas vendas?
-              </span>
+            <h2 className="mt-6 text-4xl sm:text-6xl font-black tracking-tight leading-[1.05] text-primary-foreground">
+              Pronto para acelerar suas vendas?
             </h2>
-            <p className="mt-5 text-lg text-slate-300 max-w-xl mx-auto">
+            <p className="mt-5 text-lg text-primary-foreground/80 max-w-xl mx-auto">
               Crie sua vitrine, cadastre seus produtos e compartilhe o link. Simples
               assim.
             </p>
 
             <Link
               to="/register"
-              className="mt-9 group inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-bold px-7 py-4 rounded-xl transition-all"
+              className="mt-9 group inline-flex items-center justify-center gap-2 bg-background hover:bg-muted text-foreground font-bold px-7 py-4 rounded-xl transition-all"
             >
               <Rocket className="w-5 h-5" />
               Começar Agora
