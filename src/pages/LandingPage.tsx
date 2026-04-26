@@ -238,7 +238,7 @@ function Hero() {
             </h1>
 
             <p className="mt-7 text-xl text-slate-600 max-w-2xl leading-relaxed">
-              Crie uma vitrine profissional para mostrar seus produtos e vender direto pelo WhatsApp, sem burocracia ou conhecimento técnico.
+              Crie uma vitrine profissional para apresentar seus produtos e vender mais, sem burocracia ou conhecimento técnico.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
