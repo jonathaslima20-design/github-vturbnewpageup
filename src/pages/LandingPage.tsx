@@ -400,27 +400,28 @@ function StatsStrip() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden border-y border-slate-200/60 bg-gradient-to-b from-white via-slate-50 to-white"
-    >
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)',
-          backgroundSize: '18px 18px',
-        }}
-      />
-      <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
+    <section ref={sectionRef} className="relative bg-white py-10 md:py-16">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-b from-white via-slate-50 to-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_8px_30px_-12px_rgba(15,23,42,0.08)]">
+          <div
+            className="absolute inset-0 opacity-[0.04] pointer-events-none"
+            style={{
+              backgroundImage:
+                'radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)',
+              backgroundSize: '18px 18px',
+            }}
+          />
+          <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-slate-900/[0.04] blur-3xl pointer-events-none" />
 
-      <div className="relative mx-auto max-w-6xl px-3 sm:px-6 py-10 md:py-14 grid grid-cols-4 gap-x-2 sm:gap-x-4 divide-x divide-slate-200/70">
-        {stats.map((s, i) => (
-          <div key={s.label} className="px-2 sm:px-4 md:px-8 first:pl-0 last:pr-0">
-            <StatBlock stat={s} visible={visible} delay={i * 80} />
+          <div className="relative px-3 sm:px-6 py-8 md:py-12 grid grid-cols-4 gap-x-2 sm:gap-x-4 divide-x divide-slate-200/70">
+            {stats.map((s, i) => (
+              <div key={s.label} className="px-2 sm:px-4 md:px-8 first:pl-0 last:pr-0">
+                <StatBlock stat={s} visible={visible} delay={i * 80} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
