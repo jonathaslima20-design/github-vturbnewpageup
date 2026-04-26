@@ -121,10 +121,10 @@ function Navbar() {
               Entrar
             </Link>
             <Link
-              to="/register"
+              to="/login"
               className="inline-flex items-center justify-center gap-2 bg-slate-900 text-white text-sm font-semibold px-4 py-2.5 rounded-xl"
             >
-              Criar Conta <ArrowRight className="w-4 h-4" />
+              Entrar <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         )}
