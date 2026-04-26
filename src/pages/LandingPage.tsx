@@ -206,7 +206,7 @@ function Hero() {
             </span>
 
             <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.05]">
-              Sua Vitrine Profissional em{' '}
+              Seu Catálogo Digital em{' '}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
                   Minutos
