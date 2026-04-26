@@ -440,19 +440,28 @@ function FeaturesBento() {
                 <Share2 className="w-6 h-6 text-emerald-600" />
               </span>
             }
-            title="Programa Indique e Ganhe"
-            description="Recompense quem traz novos clientes e cresça através do boca a boca digital."
+            title="Indique e Ganhe Comissão"
+            description="Compartilhe seu link exclusivo, indique novos lojistas para o VitrineTurbo e receba comissão em dinheiro a cada assinatura confirmada."
           >
-            <div className="mt-5 flex items-center gap-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 ring-2 ring-white -ml-2 first:ml-0"
-                />
-              ))}
-              <span className="ml-2 text-xs font-semibold text-slate-700">
-                +312 indicações ativas
-              </span>
+            <div className="mt-5 space-y-3">
+              <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5">
+                <Link2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span className="text-xs font-medium text-slate-700 truncate">
+                  vitrineturbo.com/?ref=<span className="text-emerald-700 font-semibold">seunome</span>
+                </span>
+                <span className="ml-auto text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">
+                  copiar
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 text-white px-3 py-1.5 text-xs font-bold shadow-sm">
+                  <DollarSign className="w-3.5 h-3.5" />
+                  Comissão por assinatura
+                </div>
+                <span className="text-xs font-semibold text-slate-600">
+                  recebida via Pix
+                </span>
+              </div>
             </div>
           </FeatureCard>
 
