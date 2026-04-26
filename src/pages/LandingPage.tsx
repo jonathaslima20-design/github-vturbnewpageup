@@ -260,18 +260,6 @@ function Hero() {
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
-              {[
-                'Sem cartão de crédito',
-                'Setup em 5 minutos',
-                'Cancele quando quiser',
-              ].map((t) => (
-                <span key={t} className="inline-flex items-center gap-1.5">
-                  <Check className="w-4 h-4 text-emerald-500" strokeWidth={3} />
-                  {t}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div className="relative h-[560px] lp-fadeup lp-delay-200">
