@@ -479,8 +479,8 @@ function FeaturesBento() {
                 <Smartphone className="w-6 h-6 text-blue-600" />
               </span>
             }
-            title="Mobile-First"
-            description="Performance impecável em qualquer celular. 95+ no PageSpeed por padrão."
+            title="Sistema Responsivo"
+            description="O VitrineTurbo funciona perfeitamente em qualquer dispositivo: celular, tablet, notebook ou desktop."
           />
 
           <FeatureCard
