@@ -26,6 +26,7 @@ import {
   Infinity as InfinityIcon,
   Layers,
   Link2,
+  Lock,
 } from 'lucide-react';
 
 const stockHero =
@@ -740,6 +741,40 @@ function PricingSection() {
           <p className="mt-4 text-lg text-slate-600">
             Pagamento único, sem surpresas. Todas as funcionalidades em todos os planos.
           </p>
+        </div>
+
+        <div className="mb-6 rounded-3xl border-2 border-slate-200 bg-slate-50/60 p-6 sm:p-7">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="h-11 w-11 rounded-2xl bg-slate-100 flex items-center justify-center shrink-0">
+                <Lock className="h-5 w-5 text-slate-500" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-900">Plano Free</h3>
+                <p className="text-sm text-slate-500">Gratuito para sempre</p>
+              </div>
+            </div>
+            <div className="text-left sm:text-right">
+              <p className="text-2xl font-black tracking-tight text-slate-900">R$ 0</p>
+              <span className="inline-flex items-center mt-1 bg-slate-200 text-slate-700 text-[11px] font-semibold px-2.5 py-1 rounded-md">
+                Plano Atual
+              </span>
+            </div>
+          </div>
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2.5">
+            {[
+              'Até 20 produtos',
+              'Até 5 categorias',
+              'Catálogo Digital via Link',
+              'Painel Administrativo',
+              'Funcionalidade de carrinho de compras',
+            ].map((f) => (
+              <div key={f} className="flex items-center gap-2 text-sm text-slate-600">
+                <Check className="w-4 h-4 text-slate-400 shrink-0" strokeWidth={3} />
+                <span>{f}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 items-stretch">
