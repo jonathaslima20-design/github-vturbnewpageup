@@ -386,8 +386,8 @@ function FeaturesBento() {
             hoverBorder="hover:border-blue-200"
             blurColor="rgba(37,99,235,0.18)"
             icon={
-              <span className="inline-flex w-12 h-12 rounded-2xl bg-blue-50 items-center justify-center">
-                <ShoppingBag className="w-6 h-6 text-blue-600" />
+              <span className="inline-flex w-12 h-12 rounded-2xl bg-slate-900 items-center justify-center shadow-[0_8px_20px_-8px_rgba(15,23,42,0.5)]">
+                <ShoppingBag className="w-6 h-6 text-white" />
               </span>
             }
             title="Gestão Completa de Produtos"
