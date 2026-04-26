@@ -22,6 +22,10 @@ import {
   Plus,
   Menu,
   X,
+  Infinity as InfinityIcon,
+  Layers,
+  Package,
+  Link2,
 } from 'lucide-react';
 
 const stockHero =
@@ -388,36 +392,63 @@ function FeaturesBento() {
               </span>
             }
             title="Gestão Completa de Produtos"
-            description="Cadastre, organize e atualize seu catálogo em segundos. Imagens em alta, variações e estoque sempre sincronizados."
+            description="Cadastre, organize e atualize seu catálogo em segundos."
           >
             <div className="mt-5 flex flex-wrap gap-2">
               {[
-                'Categorias ilimitadas',
-                'Variações',
-                'Estoque',
-                'Imagens em alta',
+                'Categorias Ilimitadas',
+                'Produtos Ilimitados',
+                'Links Externos',
               ].map((t) => (
                 <span
                   key={t}
-                  className="text-xs font-medium text-slate-700 bg-slate-100 rounded-full px-3 py-1.5"
+                  className="text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm"
                 >
                   {t}
                 </span>
               ))}
             </div>
             <div className="mt-7 grid grid-cols-3 gap-3">
-              {[
-                'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=240',
-                'https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&w=240',
-                'https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=240',
-              ].map((src, i) => (
-                <div
-                  key={i}
-                  className="aspect-square rounded-xl overflow-hidden bg-slate-100"
-                >
-                  <img src={src} alt="" className="w-full h-full object-cover" />
+              <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-blue-50 via-white to-blue-100/60 border border-blue-100 p-4 overflow-hidden flex flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-blue-500/10 blur-2xl" />
+                <div className="relative">
+                  <Layers className="w-6 h-6 text-blue-600" strokeWidth={2.2} />
                 </div>
-              ))}
+                <div className="relative space-y-1.5">
+                  {['Masculino', 'Feminino', 'Infantil'].map((label, i) => (
+                    <div
+                      key={label}
+                      className="flex items-center gap-1.5 text-[10px] font-medium text-slate-700 bg-white/80 backdrop-blur-sm rounded-md px-2 py-1 border border-blue-100"
+                      style={{ marginLeft: `${i * 6}px` }}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                      {label}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-emerald-100/60 border border-emerald-100 p-4 overflow-hidden flex flex-col items-center justify-center transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-emerald-500/10 blur-2xl" />
+                <Package className="w-7 h-7 text-emerald-600 mb-2" strokeWidth={2.2} />
+                <InfinityIcon className="w-12 h-12 text-emerald-600" strokeWidth={2.5} />
+                <div className="mt-2 text-[10px] font-semibold text-emerald-700 uppercase tracking-wide">
+                  Sem limites
+                </div>
+              </div>
+
+              <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-amber-50 via-white to-amber-100/60 border border-amber-100 p-4 overflow-hidden flex flex-col justify-between transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-amber-500/10 blur-2xl" />
+                <div className="relative flex items-center justify-between">
+                  <Link2 className="w-6 h-6 text-amber-600" strokeWidth={2.2} />
+                  <ExternalLink className="w-4 h-4 text-amber-500" strokeWidth={2.2} />
+                </div>
+                <div className="relative space-y-1.5">
+                  <div className="h-1.5 rounded-full bg-amber-200/70 w-full" />
+                  <div className="h-1.5 rounded-full bg-amber-200/70 w-4/5" />
+                  <div className="h-1.5 rounded-full bg-amber-200/70 w-3/5" />
+                </div>
+              </div>
             </div>
           </FeatureCard>
 
