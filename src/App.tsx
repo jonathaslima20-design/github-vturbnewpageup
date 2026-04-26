@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/sonner';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import { AuthProvider } from '@/contexts/AuthContext';
@@ -20,6 +20,7 @@ import DashboardLayout from '@/components/layouts/DashboardLayout';
 import AdminLayout from '@/components/layouts/AdminLayout';
 
 // Public Pages
+import LandingPage from '@/pages/LandingPage.tsx';
 import LoginPage from '@/pages/LoginPage.tsx';
 import RegisterPage from '@/pages/RegisterPage.tsx';
 import CorretorPage from '@/pages/CorretorPage.tsx';
@@ -145,7 +146,7 @@ function AppContent() {
       <Routes>
         {/* Public Routes */}
         <Route element={<PublicLayout />}>
-          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           
