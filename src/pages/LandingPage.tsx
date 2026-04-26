@@ -128,6 +128,67 @@ function Navbar() {
   );
 }
 
+type PhoneProps = {
+  src: string;
+  rotate: string;
+  bob: string;
+  scale?: string;
+  z?: string;
+};
+function Phone({ src, rotate, bob, scale = '', z = '' }: PhoneProps) {
+  return (
+    <div
+      className={`shrink-0 ${z}`}
+      style={{ transform: `${rotate}` }}
+    >
+      <div className={`${bob} ${scale}`}>
+        <div className="relative w-[230px] h-[470px] rounded-[2.5rem] bg-slate-900 p-2.5 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.45)]">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-slate-900 rounded-b-2xl z-10" />
+          <div className="w-full h-full rounded-[2rem] overflow-hidden bg-white relative">
+            <img
+              src={src}
+              alt="VitrineTurbo screen"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PhoneCarousel() {
+  const screens = [
+    { src: '/image.png', rotate: 'rotate(-8deg)', bob: 'lp-bob-a' },
+    { src: '/image copy.png', rotate: 'rotate(0deg)', bob: 'lp-bob-b', scale: 'scale-110', z: 'relative z-10' },
+    { src: '/image.png', rotate: 'rotate(8deg)', bob: 'lp-bob-c' },
+    { src: '/image copy.png', rotate: 'rotate(-6deg)', bob: 'lp-bob-a' },
+    { src: '/image.png', rotate: 'rotate(4deg)', bob: 'lp-bob-b' },
+    { src: '/image copy.png', rotate: 'rotate(-4deg)', bob: 'lp-bob-c' },
+  ];
+  const sequence = [...screens, ...screens];
+
+  return (
+    <div className="relative h-full w-full lp-carousel">
+      <div className="absolute inset-0 flex items-center lp-carousel-mask overflow-hidden">
+        <div className="lp-marquee-track flex items-center gap-10 px-6">
+          {sequence.map((s, i) => (
+            <Phone
+              key={i}
+              src={s.src}
+              rotate={s.rotate}
+              bob={s.bob}
+              scale={s.scale}
+              z={s.z}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section id="top" className="relative pt-36 pb-24 overflow-hidden mesh-light">
@@ -214,25 +275,15 @@ function Hero() {
           </div>
 
           <div className="relative h-[560px] lp-fadeup lp-delay-200">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="absolute w-[420px] h-[420px] rounded-full bg-blue-500/20 blur-3xl" />
-              <div className="absolute w-[300px] h-[300px] rounded-full bg-emerald-400/15 blur-3xl translate-x-12 translate-y-16" />
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="absolute w-[460px] h-[460px] rounded-full bg-blue-500/20 blur-3xl" />
+              <div className="absolute w-[320px] h-[320px] rounded-full bg-emerald-400/15 blur-3xl translate-x-12 translate-y-16" />
+              <div className="absolute w-[260px] h-[260px] rounded-full bg-amber-400/15 blur-3xl -translate-x-16 -translate-y-12" />
             </div>
 
-            <div className="relative h-full flex items-center justify-center lp-float">
-              <div className="relative w-[280px] h-[560px] rounded-[3rem] bg-slate-900 p-3 soft-shadow shadow-2xl">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-slate-900 rounded-b-2xl z-10" />
-                <div className="w-full h-full rounded-[2.4rem] overflow-hidden bg-white relative">
-                  <img
-                    src="/image.png"
-                    alt="Vitrine King Store"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+            <PhoneCarousel />
 
-            <div className="absolute top-12 -left-2 sm:left-0 soft-card rounded-2xl px-4 py-3 soft-shadow lp-fadeup lp-delay-300">
+            <div className="absolute top-8 -left-2 sm:left-0 soft-card rounded-2xl px-4 py-3 soft-shadow lp-fadeup lp-delay-300 z-20">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
                   <TrendingUp className="w-5 h-5 text-emerald-600" />
@@ -244,7 +295,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="absolute bottom-20 -right-2 sm:right-0 soft-card rounded-2xl px-4 py-3 soft-shadow lp-fadeup lp-delay-400">
+            <div className="absolute bottom-16 -right-2 sm:right-0 soft-card rounded-2xl px-4 py-3 soft-shadow lp-fadeup lp-delay-400 z-20">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
                   <MessageCircle className="w-5 h-5 text-blue-600" />

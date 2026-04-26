@@ -600,6 +600,43 @@ body {
   animation: lp-drawLine 2.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
 }
 
+/* Phone carousel */
+@keyframes lp-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes lp-bob-a {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-10px) rotate(-6deg); }
+}
+@keyframes lp-bob-b {
+  0%, 100% { transform: translateY(-6px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(0deg); }
+}
+@keyframes lp-bob-c {
+  0%, 100% { transform: translateY(0) rotate(6deg); }
+  50% { transform: translateY(-12px) rotate(6deg); }
+}
+
+.lp-marquee-track {
+  animation: lp-marquee 28s linear infinite;
+  width: max-content;
+}
+
+.lp-carousel-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.lp-carousel:hover .lp-marquee-track {
+  animation-play-state: paused;
+}
+
+.lp-bob-a { animation: lp-bob-a 6s ease-in-out infinite; }
+.lp-bob-b { animation: lp-bob-b 7s ease-in-out infinite; }
+.lp-bob-c { animation: lp-bob-c 6.5s ease-in-out infinite; }
+
 .lp-root ::selection {
   background: #0b1220;
   color: #ffffff;
