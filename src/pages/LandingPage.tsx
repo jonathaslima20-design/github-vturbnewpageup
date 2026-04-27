@@ -26,7 +26,6 @@ import {
   Infinity as InfinityIcon,
   Layers,
   Link2,
-  Lock,
 } from 'lucide-react';
 
 const stockHero =
@@ -686,29 +685,7 @@ function PricingSection() {
     'Programa de Indicação ("Indique e Ganhe")',
   ];
 
-  const freeFeatures = [
-    'Até 20 produtos',
-    'Até 5 categorias',
-    'Catálogo Digital via Link',
-    'Painel Administrativo',
-    'Funcionalidade de carrinho de compras',
-  ];
-
   const plans = [
-    {
-      name: 'Free',
-      price: 'R$ 0',
-      period: 'gratuito para sempre',
-      icon: <Lock className="w-6 h-6 text-slate-500" />,
-      iconBg: 'bg-slate-100',
-      cardBg: 'bg-slate-50/60',
-      border: 'border-slate-200',
-      btn: 'bg-slate-900 hover:bg-slate-800 text-white',
-      popular: false,
-      scale: '',
-      features: freeFeatures,
-      ctaLabel: 'Começar Grátis',
-    },
     {
       name: 'Mensal',
       price: 'R$ 57,00',
