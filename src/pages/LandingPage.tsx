@@ -745,7 +745,7 @@ function PricingSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch max-w-4xl mx-auto w-full">
           {plans.map((p) => (
             <div
               key={p.name}
