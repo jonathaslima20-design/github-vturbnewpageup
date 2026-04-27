@@ -386,11 +386,6 @@ function FeaturesBento() {
                   <div className="mt-3 text-[11px] leading-none font-semibold uppercase tracking-[0.14em] text-slate-700 text-center">
                     {label}
                   </div>
-                  <div className="mt-1.5 inline-flex items-center gap-1.5 text-[10px] leading-none font-medium text-slate-500">
-                    <span className="w-2 h-px bg-slate-300" />
-                    Ilimitado
-                    <span className="w-2 h-px bg-slate-300" />
-                  </div>
                 </div>
               ))}
             </div>
