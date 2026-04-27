@@ -248,7 +248,7 @@ function Hero() {
                 className="group inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-4 rounded-xl transition-all soft-shadow"
               >
                 <Rocket className="w-5 h-5" />
-                Começar Grátis
+                Criar Agora
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <a
