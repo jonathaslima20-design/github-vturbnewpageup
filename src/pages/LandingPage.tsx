@@ -685,13 +685,18 @@ function PricingSection() {
       name: 'Mensal',
       price: 'R$ 57,00',
       period: 'pagamento único',
-      icon: <Zap className="w-6 h-6 text-blue-600" />,
-      iconBg: 'bg-blue-50',
-      cardBg: 'bg-blue-50/40',
-      border: 'border-blue-200',
+      icon: <Zap className="w-6 h-6 text-slate-700" />,
+      iconBg: 'bg-slate-100',
+      cardBg: 'bg-white',
+      border: 'border-slate-200',
       btn: 'bg-slate-900 hover:bg-slate-800 text-white',
       popular: false,
       scale: '',
+      titleColor: 'text-slate-900',
+      priceColor: 'text-slate-900',
+      periodColor: 'text-slate-500',
+      featureColor: 'text-slate-700',
+      checkColor: 'text-emerald-500',
       features: paidFeatures,
       ctaLabel: 'Assinar Agora',
     },
@@ -699,13 +704,18 @@ function PricingSection() {
       name: 'Semestral',
       price: 'R$ 229,00',
       period: 'pagamento único',
-      icon: <Star className="w-6 h-6 text-orange-500" />,
-      iconBg: 'bg-orange-50',
+      icon: <Star className="w-6 h-6 text-slate-700" />,
+      iconBg: 'bg-slate-100',
       cardBg: 'bg-white',
       border: 'border-slate-200',
       btn: 'bg-slate-900 hover:bg-slate-800 text-white',
       popular: false,
       scale: '',
+      titleColor: 'text-slate-900',
+      priceColor: 'text-slate-900',
+      periodColor: 'text-slate-500',
+      featureColor: 'text-slate-700',
+      checkColor: 'text-emerald-500',
       features: paidFeatures,
       ctaLabel: 'Assinar Agora',
     },
@@ -713,13 +723,18 @@ function PricingSection() {
       name: 'Anual',
       price: 'R$ 336,00',
       period: 'pagamento único',
-      icon: <Crown className="w-6 h-6 text-amber-600" />,
-      iconBg: 'bg-amber-50',
-      cardBg: 'bg-amber-50/50',
-      border: 'border-amber-300',
-      btn: 'bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white',
+      icon: <Crown className="w-6 h-6 text-slate-200" />,
+      iconBg: 'bg-slate-700',
+      cardBg: 'bg-slate-900',
+      border: 'border-slate-900',
+      btn: 'bg-white hover:bg-slate-100 text-slate-900',
       popular: true,
       scale: 'lg:scale-[1.03]',
+      titleColor: 'text-white',
+      priceColor: 'text-white',
+      periodColor: 'text-slate-400',
+      featureColor: 'text-slate-300',
+      checkColor: 'text-emerald-400',
       features: paidFeatures,
       ctaLabel: 'Assinar Agora',
     },
@@ -747,7 +762,7 @@ function PricingSection() {
               className={`relative rounded-3xl border-2 ${p.border} ${p.cardBg} ${p.scale} p-7 flex flex-col transition-all hover:soft-shadow`}
             >
               {p.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-amber-400 text-amber-950 text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md border border-slate-200">
                   <Star className="w-3 h-3" fill="currentColor" />
                   Mais Popular
                 </span>
@@ -759,19 +774,19 @@ function PricingSection() {
                 {p.icon}
               </div>
 
-              <h3 className="mt-5 text-xl font-bold text-slate-900">{p.name}</h3>
+              <h3 className={`mt-5 text-xl font-bold ${p.titleColor}`}>{p.name}</h3>
               <div className="mt-3">
-                <p className="text-4xl font-black tracking-tight text-slate-900">
+                <p className={`text-4xl font-black tracking-tight ${p.priceColor}`}>
                   {p.price}
                 </p>
-                <p className="text-sm text-slate-500 mt-1">{p.period}</p>
+                <p className={`text-sm mt-1 ${p.periodColor}`}>{p.period}</p>
               </div>
 
               <ul className="mt-6 space-y-3 flex-1">
                 {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-slate-700">
+                  <li key={f} className={`flex items-start gap-2.5 text-sm ${p.featureColor}`}>
                     <Check
-                      className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5"
+                      className={`w-5 h-5 ${p.checkColor} shrink-0 mt-0.5`}
                       strokeWidth={3}
                     />
                     <span>{f}</span>
