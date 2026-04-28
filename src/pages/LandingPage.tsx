@@ -26,6 +26,9 @@ import {
   Infinity as InfinityIcon,
   Layers,
   Link2,
+  Palette,
+  Ruler,
+  Tag,
 } from 'lucide-react';
 
 const stockHero =
@@ -366,28 +369,53 @@ function FeaturesBento() {
             title="Gestão Completa de Produtos"
             description="Cadastre, organize e atualize seu catálogo em segundos."
           >
-            <div className="mt-7 grid grid-cols-3 gap-2">
-              {[
-                { Icon: Layers, label: 'Categorias' },
-                { Icon: InfinityIcon, label: 'Produtos' },
-                { Icon: Link2, label: 'Links' },
-              ].map(({ Icon, label }, i) => (
-                <div
-                  key={label}
-                  className="group/card flex flex-col items-center justify-start py-4"
-                  style={{ transitionDelay: `${i * 40}ms` }}
-                >
-                  <div className="relative">
-                    <div className="absolute inset-0 rounded-2xl bg-slate-900/10 blur-lg scale-110" />
-                    <div className="relative inline-flex w-14 h-14 sm:w-16 sm:h-16 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_10px_25px_-8px_rgba(15,23,42,0.5)] transition-transform duration-500 group-hover/card:scale-110 group-hover/card:rotate-3">
-                      <Icon className="w-6 h-6" strokeWidth={2} />
+            <div className="mt-7 flex flex-col gap-4">
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { Icon: Layers, label: 'Categorias' },
+                  { Icon: InfinityIcon, label: 'Produtos' },
+                  { Icon: Link2, label: 'Links' },
+                ].map(({ Icon, label }, i) => (
+                  <div
+                    key={label}
+                    className="group/card flex flex-col items-center justify-start py-4"
+                    style={{ transitionDelay: `${i * 40}ms` }}
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-2xl bg-slate-900/10 blur-lg scale-110" />
+                      <div className="relative inline-flex w-14 h-14 sm:w-16 sm:h-16 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_10px_25px_-8px_rgba(15,23,42,0.5)] transition-transform duration-500 group-hover/card:scale-110 group-hover/card:rotate-3">
+                        <Icon className="w-6 h-6" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <div className="mt-3 text-[11px] leading-none font-semibold uppercase tracking-[0.14em] text-slate-700 text-center">
+                      {label}
                     </div>
                   </div>
-                  <div className="mt-3 text-[11px] leading-none font-semibold uppercase tracking-[0.14em] text-slate-700 text-center">
-                    {label}
+                ))}
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { Icon: Palette, label: 'Cores' },
+                  { Icon: Ruler, label: 'Tamanhos' },
+                  { Icon: Tag, label: 'Ofertas' },
+                ].map(({ Icon, label }, i) => (
+                  <div
+                    key={label}
+                    className="group/card flex flex-col items-center justify-start py-4"
+                    style={{ transitionDelay: `${i * 40}ms` }}
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-2xl bg-slate-900/10 blur-lg scale-110" />
+                      <div className="relative inline-flex w-14 h-14 sm:w-16 sm:h-16 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-[0_10px_25px_-8px_rgba(15,23,42,0.5)] transition-transform duration-500 group-hover/card:scale-110 group-hover/card:rotate-3">
+                        <Icon className="w-6 h-6" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <div className="mt-3 text-[11px] leading-none font-semibold uppercase tracking-[0.14em] text-slate-700 text-center">
+                      {label}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </FeatureCard>
 
