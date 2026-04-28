@@ -979,7 +979,7 @@ function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-              Sua vitrine digital pronta para o WhatsApp. Venda mais, com menos esforço.
+              Seu catálogo digital em minutos. Venda mais, com menos esforço.
             </p>
           </div>
 
